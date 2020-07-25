@@ -8,15 +8,15 @@ import java.awt.event.WindowListener;
 import javax.swing.JDialog;
 import javax.swing.JLabel;
 
-public class exitoso_actusoli extends JDialog {
+public class exitoso_clave extends JDialog{
 	//-----------------------------------
 	
 	private JLabel               lb_mensaje;
-	private actualizar_solicitud actusoli;
+	private actualizar_clavejefe actusoli;
 	
 	//-----------------------------------
 	
-	public exitoso_actusoli(actualizar_solicitud j) {
+	public exitoso_clave(actualizar_clavejefe j) {
 		super (j, true);
 		actusoli = j;
 		setTitle("");
@@ -72,7 +72,7 @@ public class exitoso_actusoli extends JDialog {
 			@Override
 			public void windowClosing(WindowEvent e) {
 				actusoli.setVisible(false);
-				getContentPane().add(new menu_aux());
+				getContentPane().add(new Inicio());
 			}
 			
 			@Override
@@ -88,4 +88,5 @@ public class exitoso_actusoli extends JDialog {
 			}
 		});	
 	}
+
 }

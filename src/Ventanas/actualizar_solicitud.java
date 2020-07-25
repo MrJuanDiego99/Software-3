@@ -190,7 +190,7 @@ public class actualizar_solicitud extends JFrame {
 						 tf_usu.setText(re.getString("usuarios_idusuarios"));
 						 cb_estado.setSelectedItem(re.getString("estado"));
 					 } else {
-						 JOptionPane.showMessageDialog(null, "No hay nada salchichon");
+						 JOptionPane.showMessageDialog(null, "ERROR!!");
 					 }	 
 				} catch (Exception e2) {
 					System.err.println(e2);
@@ -219,7 +219,7 @@ public class actualizar_solicitud extends JFrame {
 					if(res>0) {
 						getContentPane().add(new exitoso_actusoli(actusoli));
 					} else {
-						JOptionPane.showMessageDialog(null, "Error hp");
+						JOptionPane.showMessageDialog(null, "ERROR!!");
 					}
 				} catch (Exception e) {
 					System.err.println(e);

@@ -13,14 +13,14 @@ import javax.swing.JLabel;
 public class menu_aux extends JFrame {
 	//---------------------------------
 	
-	private JButton  bt_regiscli, bt_regissoli, bt_actusoli, bt_actucli, bt_visualizar, bt_consultar;
+	private JButton  bt_regiscli, bt_regissoli, bt_actusoli, bt_actucli, bt_visualizar, bt_consultar, bt_visuclientes, bt_consulclientes;
 	private JLabel   lb_title, lb_selctoper;
 	private menu_aux frameaux = this;
 	
 	//---------------------------------
 	public menu_aux() {
 		setTitle("SW Prestamo - Inversion");
-		setSize(581,459);
+		setSize(581,534);
 		setLocationRelativeTo(null);
 		setupWidgets();
 		setupEvents();
@@ -48,6 +48,12 @@ public class menu_aux extends JFrame {
 		bt_consultar = new JButton("Consultar Solicitud");
 		bt_consultar.setFont(new Font("Tahoma", Font.ITALIC, 15));
 		
+		bt_visuclientes = new JButton("Visualizar Clientes");
+		bt_visuclientes.setFont(new Font("Tahoma", Font.ITALIC, 15));
+		
+		bt_consulclientes = new JButton("Consultar Clientes");
+		bt_consulclientes.setFont(new Font("Tahoma", Font.ITALIC, 15));
+		
 		lb_title = new JLabel("BANK LOAN AND FUTURE");
 		lb_title.setFont(new Font("Sitka Subheading", Font.BOLD, 24));
 		
@@ -62,9 +68,12 @@ public class menu_aux extends JFrame {
 		getContentPane().add(bt_actucli); bt_actucli.setBounds(318, 253, 167, 45);
 		getContentPane().add(bt_visualizar); bt_visualizar.setBounds(100, 325, 167, 45);
 		getContentPane().add(bt_consultar); bt_consultar.setBounds(318, 325, 167, 45);
+		getContentPane().add(bt_visuclientes); bt_visuclientes.setBounds(100, 397, 167, 45);
+		getContentPane().add(bt_consulclientes); bt_consulclientes.setBounds(318, 397, 167, 45);
 		
-		getContentPane().add(lb_title); lb_title.setBounds(144, 55, 298, 16);
+		getContentPane().add(lb_title); lb_title.setBounds(144, 41, 298, 30);
 		getContentPane().add(lb_selctoper);lb_selctoper.setBounds(213, 111, 167, 30);
+		
 							
 	}
 	//------------------------------------
@@ -125,6 +134,22 @@ public class menu_aux extends JFrame {
 				getContentPane().add(new consultar_solicitudes_aux());
 			}
 		});
+		
+		bt_visuclientes.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				getContentPane().add(new visualizar_clientes(frameaux));
+			}
+		});
+		
+		bt_consulclientes.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				setVisible(false);
+				getContentPane().add(new consultar_clientes());	
+			}
+		});
 	}
-
 }

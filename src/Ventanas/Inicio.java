@@ -14,7 +14,7 @@ import javax.swing.JLabel;
 public class Inicio extends JFrame {
 	//--------------------------------------
 	
-	private JButton  bt_user, bt_register;
+	private JButton  bt_user, bt_register, bt_actualizarusu, bt_consultarusu;
 	private JLabel   lb_title, lb_employ, lb_superuser;
 	private Inicio   mainframe = this;
 	
@@ -33,10 +33,16 @@ public class Inicio extends JFrame {
 	private void setupWidgets() {
 		
 		bt_user = new JButton("USUARIO");
-		bt_user.setFont(new Font("Tahoma", Font.ITALIC, 13));
+		bt_user.setFont(new Font("Tahoma", Font.ITALIC, 28));
 		
 		bt_register = new JButton("REGISTRAR USUARIO");
 		bt_register.setFont(new Font("Tahoma", Font.ITALIC, 13));
+		
+		bt_actualizarusu = new JButton("ACTUALIZAR USUARIO");
+		bt_actualizarusu.setFont(new Font("Tahoma", Font.ITALIC, 13));
+		
+		bt_consultarusu = new JButton("CONSULTAR USUARIO");
+		bt_consultarusu.setFont(new Font("Tahoma", Font.ITALIC, 13));
 		
 		lb_title = new JLabel("BANK LOAN AND FUTURE");
 		lb_title.setFont(new Font("Sitka Subheading", Font.BOLD, 24));
@@ -48,14 +54,17 @@ public class Inicio extends JFrame {
 		lb_superuser.setForeground(Color.RED);
 		
 		
-		setLayout(null);
+		getContentPane().setLayout(null);
 		
-		add(bt_register); bt_register.setBounds(322, 150, 159, 45);
-		add(bt_user); bt_user.setBounds(98, 150, 113, 45);
+		getContentPane().add(bt_register); bt_register.setBounds(319, 130, 180, 45);
+		getContentPane().add(bt_actualizarusu); bt_actualizarusu.setBounds(319, 240, 180, 45);
+		getContentPane().add(bt_consultarusu); bt_consultarusu.setBounds(319, 185, 180, 45);
 		
-		add(lb_title); lb_title.setBounds(142, 36, 298, 16);
-		add(lb_employ);lb_employ.setBounds(98, 197, 72, 16);
-		add(lb_superuser);lb_superuser.setBounds(322, 197, 159, 16);
+		getContentPane().add(bt_user); bt_user.setBounds(104, 130, 159, 96);
+		
+		getContentPane().add(lb_title); lb_title.setBounds(142, 28, 298, 24);
+		getContentPane().add(lb_employ);lb_employ.setBounds(104, 229, 72, 16);
+		getContentPane().add(lb_superuser);lb_superuser.setBounds(319, 295, 159, 16);
 			
 	}
 	//--------------------------------------
@@ -68,7 +77,7 @@ public class Inicio extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				mainframe.setVisible(false);
-				add(new menu_rol());
+				getContentPane().add(new menu_rol());
 				
 			}
 		});
@@ -77,7 +86,25 @@ public class Inicio extends JFrame {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-			add(new validacion_inge(mainframe));
+			getContentPane().add(new validacion_inge(mainframe));
+				
+			}
+		});
+		
+		bt_actualizarusu.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				getContentPane().add(new validacion_inge1(mainframe));
+				
+			}
+		});
+		
+		bt_consultarusu.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				getContentPane().add(new validacion_inge2(mainframe));
 				
 			}
 		});

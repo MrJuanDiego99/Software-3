@@ -9,11 +9,12 @@ import java.awt.event.MouseListener;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import java.awt.Color;
 
 public class menu_jefe extends JFrame {
 	//---------------------------------
 	
-	private JButton   bt_visualizar, bt_consultar, bt_registrar;
+	private JButton   bt_visualizar, bt_consultar, bt_registrar, bt_actualizar;
 	private JLabel    lb_title, lb_selctoper;
 	private menu_jefe framemj = this;
 	
@@ -39,6 +40,10 @@ public class menu_jefe extends JFrame {
 		bt_registrar = new JButton("Registrar Solicitudes");
 		bt_registrar.setFont(new Font("Tahoma", Font.ITALIC, 15));
 		
+		bt_actualizar = new JButton("Cambiar Contraseña");
+		bt_actualizar.setForeground(Color.BLUE);
+		bt_actualizar.setFont(new Font("Tahoma", Font.ITALIC, 15));
+		
 		lb_title = new JLabel("BANK LOAN AND FUTURE");
 		lb_title.setFont(new Font("Sitka Subheading", Font.BOLD, 24));
 		
@@ -50,8 +55,9 @@ public class menu_jefe extends JFrame {
 		getContentPane().add(bt_visualizar); bt_visualizar.setBounds(88, 184, 179, 45);
 		getContentPane().add(bt_consultar); bt_consultar.setBounds(309, 184, 179, 45);
 		getContentPane().add(bt_registrar); bt_registrar.setBounds(85, 255, 192, 45);
+		getContentPane().add(bt_actualizar); bt_actualizar.setBounds(307, 255, 192, 45);
 		
-		getContentPane().add(lb_title); lb_title.setBounds(144, 55, 298, 16);
+		getContentPane().add(lb_title); lb_title.setBounds(144, 47, 298, 24);
 		getContentPane().add(lb_selctoper);lb_selctoper.setBounds(213, 111, 167, 30);
 					
 	}
@@ -84,6 +90,15 @@ public class menu_jefe extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				setVisible(false);
 				getContentPane().add(new registro_solicitud());
+			}
+		});
+		
+		bt_actualizar.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				setVisible(false);
+				getContentPane().add(new actualizar_clavejefe());
 				
 			}
 		});

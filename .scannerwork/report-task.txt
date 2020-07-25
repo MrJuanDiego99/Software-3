@@ -1,0 +1,6 @@
+projectKey=Software
+serverUrl=http://localhost:9000
+serverVersion=8.3.1.34397
+dashboardUrl=http://localhost:9000/dashboard?id=Software
+ceTaskId=AXL72-IAW9dh3hPviWBB
+ceTaskUrl=http://localhost:9000/api/ce/task?id=AXL72-IAW9dh3hPviWBB
